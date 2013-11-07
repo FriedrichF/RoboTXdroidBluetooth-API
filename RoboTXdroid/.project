@@ -27,8 +27,8 @@
 		</buildCommand>
 	</buildSpec>
 	<natures>
-		<nature>fr.obeo.dsl.viewpoint.nature.modelingproject</nature>
 		<nature>com.android.ide.eclipse.adt.AndroidNature</nature>
+		<nature>fr.obeo.dsl.viewpoint.nature.modelingproject</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
 </projectDescription>
