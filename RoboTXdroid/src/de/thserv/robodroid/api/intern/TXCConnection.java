@@ -47,13 +47,13 @@ public class TXCConnection {
 			BluetoothDevice device = BluetoothAdapter.getDefaultAdapter().getRemoteDevice(TXCConnection.this.mac);
 
 			// UUID for serial connection
-			Method m;
-			m = device.getClass().getMethod("createRfcommSocket", new Class[]{int.class});
-			TXCConnection.this.socket = (BluetoothSocket)m.invoke(device, Integer.valueOf(1)); 
+//			Method m;
+//			m = device.getClass().getMethod("createRfcommSocket", new Class[]{int.class});
+//			TXCConnection.this.socket = (BluetoothSocket)m.invoke(device, Integer.valueOf(1)); 
 			
-			//final UUID SERIAL_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
+			final UUID SERIAL_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 			
-			//TXCConnection.this.socket = device.createRfcommSocketToServiceRecord(SERIAL_UUID);
+			TXCConnection.this.socket = device.createInsecureRfcommSocketToServiceRecord(SERIAL_UUID);
 
 			TXCConnection.this.socket.connect();
 			TXCConnection.this.os = TXCConnection.this.socket.getOutputStream();
